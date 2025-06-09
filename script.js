@@ -44,7 +44,7 @@ function decorateProfileData(details) {
               <h2 class="text-2xl font-bold">${details.name?details.name:details.login}</h2>
               <p class="text-gray-400">${details.login}</p>
               <p class="mt-1 text-gray-300">${
-                details.bio ? details.bio : "There is no bio."
+                details.bio ? details.bio : "There is no bio availabe."
               }</p>
             </div>
 
