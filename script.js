@@ -29,7 +29,7 @@ function decorateProfileData(details) {
   const createdAt = details.created_at;
   const dateObj = new Date(createdAt)
   const onlyDate = dateObj.toISOString().split("T")[0];
-  console.log(details);
+ 
   let data = `<div class="flex flex-col sm:flex-row gap-6 items-start">
           <!-- Avatar -->
           <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-blue-500 shadow">
@@ -44,12 +44,12 @@ function decorateProfileData(details) {
               <h2 class="text-2xl font-bold">${details.name?details.name:details.login}</h2>
               <p class="text-gray-400">${details.login}</p>
               <p class="mt-1 text-gray-300">${
-                details.bio ? details.bio : "there is no bio"
+                details.bio ? details.bio : "There is no bio."
               }</p>
             </div>
 
             <div class="text-sm text-gray-400">
-              <p>📍 ${details.location}</p>
+              <p>📍 ${details.location ? details.location : "Anywhere on Earth"}</p>
               <p>🏢 Company: ${details.company ? details.company : "N/A"}</p>
               <p>🔗 Website: <a href="#" class="hover:underline">${
                 details.blog ? details.blog : "N/A"
