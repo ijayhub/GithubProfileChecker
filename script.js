@@ -41,7 +41,7 @@ function decorateProfileData(details) {
           <!-- User Info -->
           <div class="flex-1 space-y-2">
             <div>
-              <h2 class="text-2xl font-bold">${details.name}</h2>
+              <h2 class="text-2xl font-bold">${details.name?details.name:details.login}</h2>
               <p class="text-gray-400">${details.login}</p>
               <p class="mt-1 text-gray-300">${
                 details.bio ? details.bio : "there is no bio"
