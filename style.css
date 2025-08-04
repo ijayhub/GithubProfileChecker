@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Toggle Styling */
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4f46e5; /* Indigo */
+}
+
+.toggle-checkbox:checked + .toggle-label .dot {
+  transform: translateX(24px);
+}

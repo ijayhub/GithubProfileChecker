@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        html,body{
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+    <title>GitHub Profile Explorer 🔍</title>
+    <link rel="stylesheet" href="../GithubProfileChecker/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-900 text-white font-sans min-h-screen flex items-center justify-center p-4">
-    <div class="max-w-3xl w-full bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-8">
+
+  <body class="bg-gray-900 text-white font-sans min-h-screen flex items-center justify-center p-4 transition-colors duration-300" id="body">
+    <div class="absolute top-5 right-5 flex items-center gap-2">
+      <label class="text-sm">Dark Mode</label>
+      <input type="checkbox" id="theme-toggle" class="toggle-checkbox hidden">
+      <label for="theme-toggle" class="toggle-label w-12 h-6 bg-gray-600 rounded-full flex items-center p-1 cursor-pointer transition">
+        <div class="dot bg-white w-4 h-4 rounded-full shadow transform transition"></div>
+      </label>
+    </div>
+
+    <div class="max-w-3xl w-full bg-gray-800 rounded-2xl shadow-2xl p-8 space-y-8" id="container">
       <!-- Header -->
       <div class="text-center">
         <h1 class="text-3xl font-bold tracking-tight">GitHub User Finder</h1>
@@ -38,25 +39,33 @@
         </button>
       </form>
 
-      <!-- GitHub Profile Display (Dummy Data) -->
-      <div class="card border-t border-gray-700 pt-6">
-        
+      <!-- Loader Spinner -->
+      <div id="loader" class="hidden flex justify-center my-4">
+        <div class="w-10 h-10 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
+      </div>
+
+      <!-- 404 Error Message -->
+      <div id="error404" class="hidden text-center text-red-400 font-semibold">
+        😕 User not found. Please check the username and try again.
+      </div>
+
+      <!-- GitHub Profile Display -->
+      <div class="card border-t border-gray-700 pt-6"></div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+      // Theme toggle handler
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.getElementById("body");
+      const container = document.getElementById("container");
+
+      themeToggle.addEventListener("change", () => {
+        body.classList.toggle("bg-white");
+        body.classList.toggle("text-black");
+        container.classList.toggle("bg-gray-100");
+        container.classList.toggle("text-black");
+      });
+    </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
