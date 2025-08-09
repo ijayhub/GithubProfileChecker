@@ -49,3 +49,5 @@ flowchart TD
 ## Dependencies
 
 - [Tailwind CSS CDN](https://cdn.tailwindcss.com) 
+
+[![Read the Wiki for more in-depth understanding](https://img.shields.io/badge/Wiki-Read%20More-blue?style=for-the-badge)](https://github.com/ijayhub/GithubProfileChecker/wiki)
